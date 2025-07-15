@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-
-using Square;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Square;
+using Square.Models;
 using Square.Authentication;
 
 namespace sqRazorSample.Pages
@@ -35,17 +35,11 @@ namespace sqRazorSample.Pages
             IdempotencyKey = NewIdempotencyKey();
 
             WebPaymentsSdkUrl = environment == Square.Environment.Sandbox ?
-                "https://sandbox.web.squarecdn.com/v1/square.js" : "https://web.squarecdn.com/v1/square.js" ;
+                "https://sandbox.web.squarecdn.com/v1/square.js" : "https://web.squarecdn.com/v1/square.js";
 
- 
-
-      client = new SquareClient.Builder()
-                .BearerAuthCredentials(
-                    new BearerAuthModel.Builder(
-                        accessToken
-                    )
-                    .Build())
+            client = new SquareClient.Builder()
                 .Environment(environment)
+                .AccessToken(accessToken)
                 .Build();
         }
 

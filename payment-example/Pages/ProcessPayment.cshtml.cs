@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json.Linq;
@@ -9,7 +8,6 @@ using Square;
 using Square.Models;
 using Square.Exceptions;
 using Square.Authentication;
-
 
 namespace sqRazorSample.Pages
 {
@@ -26,13 +24,9 @@ namespace sqRazorSample.Pages
       var accessToken = configuration["AppSettings:AccessToken"];
 
       client = new SquareClient.Builder()
-                .BearerAuthCredentials(
-                    new BearerAuthModel.Builder(
-                        accessToken
-                    )
-                    .Build())
-                .Environment(environment)
-                .Build();
+          .Environment(environment)
+          .AccessToken(accessToken)
+          .Build();
 
       locationId = configuration["AppSettings:LocationId"];
     }

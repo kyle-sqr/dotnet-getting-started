@@ -15,25 +15,30 @@ There are two sections in this ReadMe.
 1. create a file `./appsettings.json` by copying `./appsettings.json.example`. Specify `Environment`, and replace `AccessToken`, `LocationId`, and `ApplicationId` with your sandbox or production credentials. You can get your credentials from your Square application created at [Square Developer Portal](https://developer.squareup.com/apps).
 <b>WARNING</b>: never upload `appsettings.json` with your credentials or access token.
 
-1. In the file `sqRazorSample.csproj` update `REPLACE_ME` with your desired Square dotnet version. Latest version can be found [here](https://developer.squareup.com/docs/sdks/dotnet)
+2. In the file `sqRazorSample.csproj` update `REPLACE_ME` with your desired Square dotnet version. 
+  - Last verified working version is 28.0.0. 
+  - Latest version can be found [here](https://developer.squareup.com/docs/sdks/dotnet). 
 
-1. Esure you have `dotnet` installed (`dotnet --version` in your terminal). If not, please download [.net core 2.0+](https://www.microsoft.com/net/download/)
+>**Important**! Version 41.0.0 of the Square .NET SDK represents a full rewrite of the SDK, with a number of breaking changes, including client construction and parameter names.
 
-1. Open your terminal, and run the following to build the app:
+
+3. Esure you have `dotnet` installed (`dotnet --version` in your terminal). If not, please download [.net core 2.0+](https://www.microsoft.com/net/download/)
+
+4. Open your terminal, and run the following to build the app:
 
     ```
     dotnet build
     ```
 
-1. Then, to run the server:
+5. Then, to run the server:
 
     ```
     dotnet run
     ```
 
-1. Open a browser and navigate to [localhost:5000](http://localhost:5000)
+6. Open a browser and navigate to [localhost:5000](http://localhost:5000)
 
-1. Test with different payment options. For more information on testing in sandbox mode, follow the guide: [Testing using the API sandbox](https://developer.squareup.com/docs/testing/sandbox)
+7. Test with different payment options. For more information on testing in sandbox mode, follow the guide: [Testing using the API sandbox](https://developer.squareup.com/docs/testing/sandbox)
 
 
 ## Application Flow
